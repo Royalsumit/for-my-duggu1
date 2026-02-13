@@ -1,0 +1,284 @@
+/* ================= GLOBAL ================= */
+
+body {
+    background: black;
+    color: red;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    text-align: center;
+}
+
+/* Login page only centered */
+body.login {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    margin-top: 20px;
+}
+
+.glow {
+    text-shadow: 0 0 10px red, 0 0 20px darkred;
+}
+
+
+/* ================= LOGIN PAGE ================= */
+
+.center-box {
+    width: 90%;
+    max-width: 400px;
+}
+
+input {
+    padding: 12px;
+    width: 100%;
+    border-radius: 8px;
+    border: none;
+    margin-bottom: 15px;
+}
+
+button {
+    padding: 12px;
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background: darkred;
+}
+
+#error {
+    margin-top: 10px;
+    color: pink;
+}
+
+
+/* ================= BIRTHDAY PAGE ================= */
+
+body.birthday {
+    background: radial-gradient(circle at center, #200000, black);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.hero button {
+    padding: 12px 25px;
+}
+
+
+/* ================= STORY PAGE ================= */
+
+body.story {
+    background: black;
+    padding: 40px 20px;
+}
+
+.timeline {
+    max-width: 700px;
+    margin: auto;
+}
+
+.moment {
+    background: #120000;
+    border-left: 4px solid red;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 1s forwards;
+}
+
+.moment:nth-child(1) { animation-delay: 0.3s; }
+.moment:nth-child(2) { animation-delay: 0.6s; }
+.moment:nth-child(3) { animation-delay: 0.9s; }
+.moment:nth-child(4) { animation-delay: 1.2s; }
+.moment:nth-child(5) { animation-delay: 1.5s; }
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.timeline button {
+    margin: 30px auto;
+    display: block;
+}
+
+
+/* ================= GALLERY PAGE ================= */
+
+body.gallery {
+    background: black;
+}
+
+/* Romantic soft glow background */
+body.gallery::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(255,0,0,0.05), transparent 70%);
+    pointer-events: none;
+}
+
+/* Cinematic full scroll gallery */
+.grid {
+    max-width: 900px;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 18px;
+    transition: 0.4s ease;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(255,0,0,0.15);
+}
+
+.grid img:hover {
+    transform: scale(1.02);
+}
+
+/* Fullscreen viewer */
+#fullscreen {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+}
+
+#fullscreen img {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+
+/* ================= PROPOSAL ================= */
+
+#surpriseBox {
+    display: none;
+    margin-top: 60px;
+    font-size: 28px;
+    color: #ff4d4d;
+    text-shadow: 0 0 20px red;
+    animation: glowPulse 1.5s infinite alternate;
+}
+
+@keyframes glowPulse {
+    from { text-shadow: 0 0 10px red; }
+    to { text-shadow: 0 0 30px #ff0000; }
+}
+
+
+/* ================= VALENTINE GAME ================= */
+
+.valentine-box {
+    margin: 100px 0;
+}
+
+.valentine-box h2 {
+    margin-bottom: 40px;
+    font-size: 28px;
+    text-shadow: 0 0 15px red;
+}
+
+.noMessage {
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #ff8080;
+    min-height: 30px;
+}
+
+.buttons {
+    position: relative;
+    height: 120px;
+}
+
+.yesBtn, .noBtn {
+    padding: 12px 30px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.yesBtn {
+    background: red;
+    color: white;
+}
+
+.noBtn {
+    background: black;
+    color: red;
+    border: 2px solid red;
+    position: relative;
+}
+
+
+/* ================= MOBILE OPTIMIZATION ================= */
+
+@media (max-width: 600px) {
+
+    .grid {
+        gap: 25px;
+        margin: 20px auto;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    .valentine-box h2 {
+        font-size: 22px;
+    }
+
+    .yesBtn, .noBtn {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+
+    #surpriseBox {
+        font-size: 20px;
+        padding: 10px;
+    }
+}
+
+
+
+
+/* Smooth Fade */
+body {
+    transition: opacity 0.4s ease;
+}
+
+

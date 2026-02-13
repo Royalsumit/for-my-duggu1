@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Her World ❤️</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Confetti Library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+
+<body class="gallery">
+
+    <!-- Global Background Music -->
+    <audio id="globalMusic" autoplay loop>
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+
+    <h1 class="glow">Her Beautiful World ❤️</h1>
+
+    <!-- Dynamic Gallery -->
+    <div class="grid" id="mediaGrid"></div>
+
+    <!-- Valentine Game Section -->
+    <div class="valentine-box">
+        <h2>💖 Will You Be My Valentine Forever? 💖</h2>
+
+        <p id="noMessage" class="noMessage"></p>
+
+        <div class="buttons">
+            <button class="yesBtn" onclick="acceptLove()">YES 💖</button>
+            <button class="noBtn" onclick="handleNo()">NO 😏</button>
+        </div>
+    </div>
+
+    <!-- Proposal Reveal -->
+    <div id="surpriseBox">
+        <h2 id="typewriter"></h2>
+        <p id="subLine"></p>
+    </div>
+
+    <!-- Scripts at Bottom (Best Practice) -->
+    <script src="script.js"></script>
+    <script src="music.js"></script>
+
+</body>
+</html>
